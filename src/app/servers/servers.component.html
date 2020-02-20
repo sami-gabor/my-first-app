@@ -1,0 +1,44 @@
+<h4>Servers component:</h4>
+
+<p>One way data binding:</p>
+<input
+    class="form-control"
+    type="text" 
+    (input)="onUpdateInput($event)"
+>
+
+<p>Two way data binding:</p>
+<input
+    class="form-control"
+    type="text" 
+    [(ngModel)]="serverName"
+>
+<br>
+<p>Server name(from both input fields): {{ serverName }}</p>
+<hr>
+
+
+<app-server *ngFor="let server of servers"></app-server>
+
+<button 
+    class="btn btn-primary"
+    [disabled]="!allowNewServer"
+    (click)="onCreateServer()">Create server
+</button>
+
+<!-- <p>{{ serverCreationStatus }}</p> -->
+<p *ngIf="serverCreated else noServer">New server created. It's name is {{ serverName }}</p>
+<ng-template #noServer>
+    <p>No server was created</p>
+</ng-template>
+
+<!-- <p [innerText]="allowNewServer + ' - property binding'"></p>
+<p>{{ allowNewServer }} - string interpolation</p>
+ -->
+
+
+
+<!-- <mat-select ([ngModel])="options">
+    <mat-option *ngFor="let option of options">{{ option }}</mat-option>
+</mat-select> -->
+
