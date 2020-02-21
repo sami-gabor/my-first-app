@@ -7,6 +7,8 @@
 
 <div class="container">
     <div *ngFor="let element of serverElements">
-        <app-server-element [childElement]="element"></app-server-element>
+        <app-server-element [childElement]="element">
+            <p><strong>Description: </strong>{{ element.content }}</p>
+        </app-server-element>
     </div>
 </div>
