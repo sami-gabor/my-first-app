@@ -24,6 +24,7 @@ export class ServersComponent implements OnInit {
   servers = ['1', '2'];
 
   
+  
   constructor() { 
     this.allowServer()
   }
